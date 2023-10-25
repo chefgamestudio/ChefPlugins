@@ -36,6 +36,13 @@
         "com.unity.modules.uielements": "1.0.0"
       }
     },
+    "com.unity.ads.ios-support": {
+      "version": "https://github.com/Unity-Technologies/com.unity.ads.ios-support.git?path=com.unity.ads.ios-support",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "427fd3bf93924378646e3e81958ded2412cb7c04"
+    },
     "com.unity.burst": {
       "version": "1.8.9",
       "depth": 1,

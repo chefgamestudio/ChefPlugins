@@ -1,0 +1,10 @@
+{
+  "name": "gs.chef.plugins",
+  "displayName": "GS Chef Plugins",
+  "version": "0.0.1",
+  "unity": "2022.3",
+  "description": "GS Chef Plugins",
+  "dependencies": {
+    "com.unity.ads.ios-support" : "https://github.com/Unity-Technologies/com.unity.ads.ios-support.git?path=com.unity.ads.ios-support"
+  }
+}
