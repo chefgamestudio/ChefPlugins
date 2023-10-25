@@ -8,7 +8,8 @@
         "UniTask",
         "Unity.TextMeshPro",
         "Unity.Advertisement.IosSupport",
-        "GoogleAds"
+        "GoogleAds",
+        "ChefATTAUTH"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
