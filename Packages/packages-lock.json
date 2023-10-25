@@ -37,11 +37,11 @@
       }
     },
     "com.unity.ads.ios-support": {
-      "version": "https://github.com/Unity-Technologies/com.unity.ads.ios-support.git?path=com.unity.ads.ios-support",
+      "version": "1.2.0",
       "depth": 0,
-      "source": "git",
+      "source": "registry",
       "dependencies": {},
-      "hash": "427fd3bf93924378646e3e81958ded2412cb7c04"
+      "url": "https://packages.unity.com"
     },
     "com.unity.burst": {
       "version": "1.8.9",

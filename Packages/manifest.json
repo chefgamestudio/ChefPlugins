@@ -45,7 +45,7 @@
     "com.unity.modules.vr": "1.0.0",
     "com.unity.modules.wind": "1.0.0",
     "com.unity.modules.xr": "1.0.0",
-    "com.unity.ads.ios-support" : "https://github.com/Unity-Technologies/com.unity.ads.ios-support.git?path=com.unity.ads.ios-support"
+    "com.unity.ads.ios-support" : "1.2.0"
   },
   "scopedRegistries": [
     {
