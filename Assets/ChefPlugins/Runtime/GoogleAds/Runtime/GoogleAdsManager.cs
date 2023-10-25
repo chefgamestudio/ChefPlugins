@@ -1,6 +1,6 @@
 using VContainer.Unity;
 
-namespace gs.chef.plugins.GoogleAds
+namespace gs.chef.plugins.googleads
 {
     public class GoogleAdsManager : IInitializable
     {

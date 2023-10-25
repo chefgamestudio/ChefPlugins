@@ -1,0 +1,11 @@
+{
+  "name": "GoogleAds",
+  "rootNamespace": "gs.chef.plugins.googleads",
+  "references": [
+    "VContainer",
+    "MessagePipe",
+    "MessagePipe.VContainer",
+    "UniTask",
+    "Unity.TextMeshPro"
+  ]
+}

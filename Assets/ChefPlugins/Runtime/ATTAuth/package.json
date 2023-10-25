@@ -1,0 +1,10 @@
+{
+  "name" : "gs.chef.plugins.attauth",
+  "displayName": "CHEF ATT AUTH Plugin",
+  "version": "0.0.1",
+  "unity": "2022.3",
+  "description": "CHEF ATT AUTH Plugin",
+  "dependencies": {
+    "com.unity.ads.ios-support": "1.2.0"
+  }
+}

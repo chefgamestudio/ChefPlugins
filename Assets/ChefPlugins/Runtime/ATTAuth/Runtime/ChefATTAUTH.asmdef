@@ -1,0 +1,12 @@
+{
+  "name": "ChefATTAUTH",
+  "rootNamespace": "gs.chef.plugins.attauth",
+  "references": [
+    "VContainer",
+    "MessagePipe",
+    "MessagePipe.VContainer",
+    "UniTask",
+    "Unity.TextMeshPro",
+    "Unity.Advertisement.IosSupport"
+  ]
+}
