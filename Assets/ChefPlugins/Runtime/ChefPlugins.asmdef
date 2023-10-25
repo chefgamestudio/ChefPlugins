@@ -1,20 +1,21 @@
 {
-  "name": "ChefPlugins",
-  "rootNamespace": "gs.chef.plugins",
-  "references": [
-    "VContainer",
-    "MessagePipe",
-    "MessagePipe.VContainer",
-    "UniTask",
-    "Unity.TextMeshPro"
-  ],
-  "includePlatforms": [],
-  "excludePlatforms": [],
-  "allowUnsafeCode": false,
-  "overrideReferences": false,
-  "precompiledReferences": [],
-  "autoReferenced": true,
-  "defineConstraints": [],
-  "versionDefines": [],
-  "noEngineReferences": false
+    "name": "ChefPlugins",
+    "rootNamespace": "gs.chef.plugins",
+    "references": [
+        "VContainer",
+        "MessagePipe",
+        "MessagePipe.VContainer",
+        "UniTask",
+        "Unity.TextMeshPro",
+        "Unity.Advertisement.IosSupport"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
 }
