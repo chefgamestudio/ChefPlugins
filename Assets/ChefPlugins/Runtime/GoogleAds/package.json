@@ -1,9 +1,0 @@
-{
-  "name": "gs.chef.plugins.googleads",
-  "displayName": "CHEF GoogleAds Plugin",
-  "version": "0.0.1",
-  "unity": "2022.3",
-  "description": "CHEF GoogleAds Plugin",
-  "dependencies": {
-  }
-}

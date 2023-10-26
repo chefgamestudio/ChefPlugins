@@ -6,16 +6,20 @@
         "MessagePipe",
         "MessagePipe.VContainer",
         "UniTask",
-        "Unity.TextMeshPro",
         "Unity.Advertisement.IosSupport",
-        "GoogleAds",
-        "ChefATTAUTH"
+        "Unity.Advertisement.IosSupport.Editor",
+        "Unity.Advertisement.IosSupport.Editor.Tests",
+        "Unity.Advertisement.IosSupport.Tests"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
-    "overrideReferences": false,
-    "precompiledReferences": [],
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "Facebook.Unity.dll",
+        "Facebook.Unity.Editor.dll",
+        "Facebook.Unity.Settings.dll"
+    ],
     "autoReferenced": true,
     "defineConstraints": [],
     "versionDefines": [],

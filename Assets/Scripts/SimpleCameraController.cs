@@ -2,6 +2,7 @@
 using UnityEngine.InputSystem;
 #endif
 
+using Unity.Advertisement.IosSupport;
 using UnityEngine;
 
 namespace UnityTemplateProjects

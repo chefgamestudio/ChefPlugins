@@ -20,5 +20,5 @@
 
     [assembly: AssemblyVersion("0.0.1")]
 
-    /*[assembly: InternalsVisibleTo("Unity.Advertisement.IosSupport.Tests")]
-    [assembly: InternalsVisibleTo("DynamicProxyGenAssembly2")]*/
+    [assembly: InternalsVisibleTo("Unity.Facebook")]
+    [assembly: InternalsVisibleTo("DynamicProxyGenAssembly2")]
