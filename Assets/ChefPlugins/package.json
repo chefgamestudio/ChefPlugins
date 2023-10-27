@@ -5,6 +5,7 @@
   "unity": "2022.3",
   "description": "GS Chef Plugins",
   "dependencies": {
-    "com.unity.ads.ios-support": "1.2.0"
+    "com.unity.ads.ios-support": "1.2.0",
+    "Facebook.Unity": "14.1.0"
   }
 }
