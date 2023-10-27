@@ -25,7 +25,7 @@ namespace gs.chef.plugins.attauth
             iOS_14_5 = new Version("14.5");
 #endif
 
-#if UNITY_IOS //&& !UNITY_EDITOR
+#if UNITY_IOS && !UNITY_EDITOR
             var status = ATTrackingStatusBinding.GetAuthorizationTrackingStatus();
 
             Debug.Log(
