@@ -5,6 +5,7 @@ using UnityEngine.iOS;
 
 using UnityEngine;
 using System;
+using System.Threading;
 using Cysharp.Threading.Tasks;
 using Facebook.Unity;
 using GameAnalyticsSDK;
@@ -16,7 +17,7 @@ namespace gs.chef.plugins.attauth
         Version currentVersion;
         Version iOS_14_5;
 
-        public async UniTaskVoid Initialize()
+        public async UniTask Initialize(CancellationToken token)
         {
             GameAnalytics.Initialize();
 #if UNITY_IOS && !UNITY_EDITOR
@@ -24,7 +25,7 @@ namespace gs.chef.plugins.attauth
             iOS_14_5 = new Version("14.5");
 #endif
 
-#if UNITY_IOS && !UNITY_EDITOR
+#if UNITY_IOS //&& !UNITY_EDITOR
             var status = ATTrackingStatusBinding.GetAuthorizationTrackingStatus();
 
             Debug.Log(
@@ -37,11 +38,18 @@ namespace gs.chef.plugins.attauth
                 if (status == ATTrackingStatusBinding.AuthorizationTrackingStatus.NOT_DETERMINED)
                 {
                     ATTrackingStatusBinding.RequestAuthorizationTracking(AuthorizationTrackingReceived);
-                    
-                    while (status == ATTrackingStatusBinding.AuthorizationTrackingStatus.NOT_DETERMINED)
+
+                    if (!token.IsCancellationRequested)
                     {
-                        status = ATTrackingStatusBinding.GetAuthorizationTrackingStatus();
-                        await UniTask.Delay(100);
+                        while (status == ATTrackingStatusBinding.AuthorizationTrackingStatus.NOT_DETERMINED)
+                        {
+                            status = ATTrackingStatusBinding.GetAuthorizationTrackingStatus();
+                            await UniTask.Delay(100);
+                        }    
+                    }
+                    else
+                    {
+                        Debug.Log("- - - - - - - - - - - - - - -\n[Class: CHEF_ATTAuth_Manager] ATTAuthManager Initialize Cancelled");
                     }
                 }
                 else
