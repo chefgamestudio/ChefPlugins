@@ -21,12 +21,7 @@
         "Facebook.Unity.Android.dll",
         "Facebook.Unity.dll",
         "Facebook.Unity.Editor.dll",
-        "Facebook.Unity.Settings.dll",
-        "Google.IOSResolver.dll",
-        "Google.JarResolver.dll",
-        "Google.PackageManagerResolver.dll",
-        "Google.VersionHandler.dll",
-        "Google.VersionHandlerImpl.dll"
+        "Facebook.Unity.Settings.dll"
     ],
     "autoReferenced": true,
     "defineConstraints": [],
