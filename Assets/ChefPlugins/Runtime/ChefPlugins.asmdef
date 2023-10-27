@@ -9,7 +9,8 @@
         "Unity.Advertisement.IosSupport",
         "Unity.Advertisement.IosSupport.Editor",
         "Unity.Advertisement.IosSupport.Editor.Tests",
-        "Unity.Advertisement.IosSupport.Tests"
+        "Unity.Advertisement.IosSupport.Tests",
+        "UnityEditor.UI"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
