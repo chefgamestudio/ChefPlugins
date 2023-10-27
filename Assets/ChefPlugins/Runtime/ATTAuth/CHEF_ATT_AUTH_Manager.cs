@@ -44,7 +44,7 @@ namespace gs.chef.plugins.attauth
                         while (status == ATTrackingStatusBinding.AuthorizationTrackingStatus.NOT_DETERMINED)
                         {
                             status = ATTrackingStatusBinding.GetAuthorizationTrackingStatus();
-                            await UniTask.Delay(100);
+                            await UniTask.Delay(100, cancellationToken: token);
                         }    
                     }
                     else
