@@ -1,4 +1,3 @@
-using VContainer.Unity;
 #if UNITY_IOS
 using Unity.Advertisement.IosSupport;
 using UnityEngine.iOS;
@@ -8,22 +7,24 @@ using UnityEngine;
 using System;
 using Cysharp.Threading.Tasks;
 using Facebook.Unity;
+using GameAnalyticsSDK;
 
 namespace gs.chef.plugins.attauth
 {
-    public class CHEF_ATT_AUTH_Manager : IInitializable
+    public class CHEF_ATT_AUTH_Manager
     {
         Version currentVersion;
         Version iOS_14_5;
 
-        public void Initialize()
+        public async UniTaskVoid Initialize()
         {
+            GameAnalytics.Initialize();
 #if UNITY_IOS && !UNITY_EDITOR
             currentVersion = new Version(Device.systemVersion);
             iOS_14_5 = new Version("14.5");
 #endif
 
-#if UNITY_IOS //&& !UNITY_EDITOR
+#if UNITY_IOS && !UNITY_EDITOR
             var status = ATTrackingStatusBinding.GetAuthorizationTrackingStatus();
 
             Debug.Log(
@@ -31,9 +32,17 @@ namespace gs.chef.plugins.attauth
 
             if (currentVersion >= iOS_14_5)
             {
+                
+                
                 if (status == ATTrackingStatusBinding.AuthorizationTrackingStatus.NOT_DETERMINED)
                 {
                     ATTrackingStatusBinding.RequestAuthorizationTracking(AuthorizationTrackingReceived);
+                    
+                    while (status == ATTrackingStatusBinding.AuthorizationTrackingStatus.NOT_DETERMINED)
+                    {
+                        status = ATTrackingStatusBinding.GetAuthorizationTrackingStatus();
+                        await UniTask.Delay(100);
+                    }
                 }
                 else
                 {
@@ -50,33 +59,18 @@ namespace gs.chef.plugins.attauth
             //    ATTrackingStatusBinding.RequestAuthorizationTracking(AuthorizationTrackingReceived);
             //}
 #else
-        Debug.Log($"- - - - - - - - - - - - - - -\n[Class: CHEF_ATTAuth_Manager] [Method: Start] | MESSAGE : The platform is not iOS. | InitializeFB called...");
-        InitializeFB();
+            Debug.Log(
+                $"- - - - - - - - - - - - - - -\n[Class: CHEF_ATTAuth_Manager] [Method: Start] | MESSAGE : The platform is not iOS. | InitializeFB called...");
+            InitializeFB();
 #endif
 
-            LoadNextScene().Forget();
-        }
-
-        private async UniTaskVoid LoadNextScene()
-        {
-#if UNITY_IOS //&& !UNITY_EDITOR
-            if (currentVersion >= iOS_14_5)
-            {
-                var status = ATTrackingStatusBinding.GetAuthorizationTrackingStatus();
-
-                while (status == ATTrackingStatusBinding.AuthorizationTrackingStatus.NOT_DETERMINED)
-                {
-                    status = ATTrackingStatusBinding.GetAuthorizationTrackingStatus();
-                    await UniTask.Delay(100);
-                }
-            }
-#endif
             await UniTask.CompletedTask;
         }
-        
+
         private void AuthorizationTrackingReceived(int status)
         {
-            Debug.Log($"- - - - - - - - - - - - - - -\n[Class: CHEF_ATTAuth_Manager] [Method: AuthorizationTrackingReceived] | Authorization Tracking Status : {status}");
+            Debug.Log(
+                $"- - - - - - - - - - - - - - -\n[Class: CHEF_ATTAuth_Manager] [Method: AuthorizationTrackingReceived] | Authorization Tracking Status : {status}");
             InitializeFB();
         }
 
@@ -125,7 +119,7 @@ namespace gs.chef.plugins.attauth
         /// </summary>
         private void ActivateFB()
         {
-#if UNITY_IOS //&& !UNITY_EDITOR
+#if UNITY_IOS && !UNITY_EDITOR
         var status = ATTrackingStatusBinding.GetAuthorizationTrackingStatus();
 
         if (currentVersion >= iOS_14_5)
