@@ -45,7 +45,8 @@ namespace gs.chef.plugins.attauth
                         {
                             status = ATTrackingStatusBinding.GetAuthorizationTrackingStatus();
                             await UniTask.Delay(100, cancellationToken: token);
-                        }    
+                        }   
+                        InitializeFB();
                     }
                     else
                     {
